@@ -27,10 +27,10 @@ def api(pergunta):
 
     data_post = {'model': 'text-davinci-003', 'prompt': pergunta, 'temperature': 1, 'max_tokens': 2000}
 
-    get_api = requests.post(UrlAPI, data=json.dumps(data_post), headers={'Content-Type':'application/json', 'Authorization': 'Bearer YOUR-TOKEN-HERE'})
-    verify_error_connection(get_api)
+    post_api = requests.post(UrlAPI, data=json.dumps(data_post), headers={'Content-Type':'application/json', 'Authorization': 'Bearer YOUR-TOKEN-HERE'})
+    verify_error_connection(post_api)
 
-    choices = ','.join(str(v) for v in get_api.json()['choices'])
+    choices = ','.join(str(v) for v in post_api.json()['choices'])
     dici = ast.literal_eval(choices)
     print("Resposta:" + Fore.GREEN + dici['text'])
 
