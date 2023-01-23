@@ -34,7 +34,7 @@ def api(pergunta):
     dici = ast.literal_eval(choices)
     print("Resposta:" + Fore.GREEN + dici['text'])
 
-print("Don't type anything and click enter to close the program!")
+print("Don't type anything and press Enter to close the program!")
 while True:
     pergunta = input("\n\n\nHuman question: ")
 
